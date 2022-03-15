@@ -1,0 +1,73 @@
+.content-container .cmd {
+    margin: 10px auto 0 auto;
+    padding: 10px;
+    color: #FFFFFF;
+    background-color: #08141E;
+    box-shadow: inset 0 0 10px 0px #000000;
+    font-family: Inconsolata, "Courier New", Consolas, "Lucida Console";
+}
+
+.content-container .cmd-new {
+    font-family: Inconsolata, "Courier New", Consolas, "Lucida Console";
+    font-weight: bold;
+}
+
+.content-container .cmd-comment {
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.content-container .cmd-comment-new {
+    font-family: Verdana, "Trebuchet MS", "Droid Sans", Geneva, sans-serif;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.content-container ul {
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.content-container ol {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.content-container img {
+    /*	margin-left: auto;
+	margin-right: auto; */
+    margin: 10px auto 0 auto;
+    display: block;
+}
+
+.content-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px auto 0 auto;
+    padding: 10px;
+}
+
+.content-container .alt-tr {
+    background-color: #F2F5F8;
+}
+
+.content-container th {
+    padding: 5px 10px;
+    border: 1px solid #B7C3CC;
+    background-color: #D8E3EA;
+}
+
+.content-container td {
+    padding: 5px 10px;
+    text-align: left;
+    border: 1px solid #DDDDDD;
+}
+
+.content-container td a {
+    text-decoration: none;
+    color: #3F91D5;
+}
+
+.content-container td a:hover {
+    text-decoration: underline;
+}

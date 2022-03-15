@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="AnonHunter Index" />
+    <meta name="keywords" content="anonhunters , anonhunters,n, openvpn, hexchat, tutorial, linux, encryption, crypto, operations, newblood, basic, irc, noob, webchat, security, vpn, guide" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/menu.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/text.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/queries.css" media="screen" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <title>AnonHunter</title>
+</head>
+
+<body>
+    <div id="menu">
+        <div>
+            <ul>
+                <li><a id="home" href="https://anonhunters.us/"><img src="./images/flags/en.png" alt="" width="20" height="12" /> English</a></li>
+                <li><a href="https://anonhunters.us/es"><img src="./images/flags/es.png" alt="" width="20" height="12" /> Español</a></li>
+                <li><a href="https://anonhunters.us/nl"><img src="./images/flags/nl.png" alt="" width="20" height="12" /> Nederlands</a></li>
+                <li><a href="https://anonhunters.us/fr"><img src="./images/flags/fr.png" alt="" width="20" height="12" /> Français</a></li>
+                <li><a href="https://anonhunters.us/it"><img src="./images/flags/it.png" alt="" width="20" height="12" /> Italian</a></li>
+                <li><a href="https://anonhunters.us/de"><img src="./images/flags/de.png" alt="" width="20" height="12" /> Deutsch</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <div id="header">
+            <img src="./images/logo.png" alt="" width="300" />
+            <h2>Welcome to AnonHunter</h2>
+            <pre>This document is here to hand you the mask, the cloak, and the hat.</pre>
+            <pre>Whether you choose to storm parliament is up to you.</pre>
+        </div>
+        <hr />
+
+        <p> First off, welcome to the internet.</p>
+        <p>We are Anonymous, and have been gaining popularity and press with stories ranging from
+            <a href="https://www.google.com/search?hl=en&amp;num=100&amp;ie=UTF-8&amp;tbo=1&amp;tbs=clue:1,prv:1&amp;q=anonymous" target="_blank" rel="noopener noreferrer">Wikileaks</a>, to <a href="https://www.youtube.com/playlist?p=B40846A8C158E643"
+                target="_blank" rel="noopener noreferrer">Protests against Scientology</a>, to the <a href="https://youtu.be/OZJwSjor4hM" target="_blank" rel="noopener noreferrer">Westboro Baptist Church</a>, to Stephen Colbert's <a href="http://www.colbertnation.com/the-colbert-report-videos/375739/february-28-2011/anonymous-hacks-the-colbert-report"
+                target="_blank" rel="noopener noreferrer">The Colbert Report</a>, to <a href="http://www.huffingtonpost.com/2011/03/14/bank-of-america-anonymous-leak-mortgage_n_835220.html" target="_blank" rel="noopener noreferrer">Bank of America</a>, to
+            <a href="https://en.wikipedia.org/wiki/Operation_Payback" target="_blank" rel="noopener noreferrer">Mastercard and Paypal</a>, to the <a href="https://arstechnica.com/tech-policy/news/2011/04/anonymous-attacks-sony-to-protest-ps3-hacker-lawsuit.ars"
+                target="_blank" rel="noopener noreferrer">lawsuit against GeoHotz from Sony</a>, and to the HBGary Scandal (see 1st video below). If you are unfamiliar with Anonymous, the videos below this paragraph sum it up quite well, so watch the super
+            cool moving picture video thingyz directly below this to get an idea of what we do. If you're already familiar with Anonymous, these videos aren't really neccessary.</p>
+
+        <iframe title="YouTube video player" width="310" height="255" src="https://www.youtube.com/embed/wEV2CMfhCeo"></iframe>
+        <iframe title="YouTube video player" width="310" height="255" src="https://www.youtube.com/embed/5i2-naTYsAM"></iframe>
+        <iframe title="YouTube video player" width="310" height="255" src="https://www.youtube.com/embed/AG2tOSPfUFE"></iframe>
+
+        <p>Wait, wut, ok, anyways. This is the tutorial information for #OpNewblood. Our mission is helping people interested in Anonymous get started, ranging from computer users who are constantly searching for the 'any key', to users who build and design
+            supercomputers (ie Watson). Anyways, currently we cover helping you get a setup that allows you to stay in regular contact with other Anonymous and to help you browse and use the internet without exposing your location or any other sensitive
+            information.</p>
+
+        <div class="content-container">
+            <h3>Security and Anonymity</h3>
+            <p>OK now comes the bad news. Nothing is 100% secure or safe from eavesdropping. As we have seen recently with revelations about the wholesale spying on the world by the NSA, the subject of security and maintaining your privacy is now much higher
+                on the list than ever before. People who once thought nothing about sending their most intimate details to another are now rethinking that situation. The internet has always been open. A closed and monitored internet defeats the purpose
+                for which it was intended: the free and easy sharing of information, thoughts, ideas and knowledge.<br /> The Heartbleed SSL bug was big news and quite shocking to the security community and internet users in general. OpenSSL, which contained
+                the error, has been fixed. Most applications that use OpenSSL have also been fixed. Website operators have been working to patch their systems, too. As for AnonHunter, we use GnuTLS, a different encryption library which was not part of the
+                Heartbleed bug. Our webchat has been updated to the correct version of SSL and our security certificates have been revoked and reissued.<br /> Much is now heard about VPNs, encrypted connections, web pages and emails. So what are these
+                mysterious things? Let us find out, shall we?</p>
+
+            <div class="content">
+                <h4>Virtual Private Network (VPN)</h4>
+                <p>A virtual private network is a connection from your computer to another network. Some of you may be familiar with these type of connections as they are widely used by businesses to handle their internal communications needs and to allow
+                    employees to access systems from remote locations. Setup properly, they can also be used by anyone to create a safer connection to the internet and have the added benefit of disguising your true location. Click the link below for a
+                    short tutorial on the different types of VPN connections and encryption.</p>
+
+                <p><a href="vpn.html">Virtual Private Networks</a></p>
+            </div>
+
+            <div class="content">
+                <h4>Encryption</h4>
+                <p>Recent news of how extensive the NSA's efforts to compromise internet security might make privacy seem impossible, but there is still hope. Edward Snowden said it in an online Q&amp;A soon after he made his first document public: &quot;Encryption
+                    works. Properly implemented strong crypto systems are one of the few things that you can rely on.&quot; We've put together a short primer to help get you started with more secure email (and files).</p>
+
+                <p><a href="securemail.html">Email Encryption Basics</a></p>
+            </div>
+
+
+        <div id="footer">
+            <p><b>Welcome.<br />
+You are now Anonymous, but you were already.<br />
+We are legion.<br />
+Do not forgive.<br />
+Do not forget.<br />
+We were expecting you.</b></p>
+
+            <p style="font-size: 12px;">
+                Effexor, Chuck, g33k, Cogitabundus, Wolfy, Strijela, Trivette, Joepie91, no, crnobela, taru, antivigilante, garrett, kyber, Topiary, Anonymiss/Choobear, Denizen, spoonzy, Ryu, nessuno, TarenCapel,muninn/xuminn, AcidBurnTX, astro, dagnos_, VyRy, BarrettBrown,
+                Renegado/itzela, sh4ri4, cred, heyguise, p0ke, and others with knowledge that pop into the channel, help someone, and ride off into the sunset.<br /> edits and html formatting by elmo, poke, velveeta, and shamon</p>
+
+            <p><a href="https://validator.w3.org/check?uri=https://anonhunters.us/" target="_blank" rel="noopener noreferrer">
+	<img src="./images/html5-valid.gif" alt="Valid XHTML 1.0 Transitional" height="24" width="103" /></a>
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

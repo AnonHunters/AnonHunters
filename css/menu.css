@@ -1,0 +1,122 @@
+/*
+** GENERAL CSS FOR MENUS
+*/
+
+#menu li,
+#navigate li {
+    float: left;
+    list-style-type: none;
+}
+
+#menu a,
+#navigate a {
+    display: block;
+    padding: 10px;
+    color: #CCCCCC;
+    text-decoration: none;
+}
+
+#menu a:hover,
+#navigate a:hover {
+    color: white;
+    background-color: #730000;
+}
+
+/*
+** CSS FOR THE LANGUAGE MENU
+*/
+
+#menu {
+    width: 100%;
+    background-color: #101010;
+    overflow: hidden;
+}
+
+#menu div {
+    max-width: 960px;
+    margin: auto;
+}
+
+#menu ul {
+    float: left;
+    position: relative;
+    left: 50%;
+}
+
+#menu li {
+    position: relative;
+    left: -50%;
+}
+
+#home {
+    color: #FFFFFF;
+    background-color: #730000;
+}
+
+ul.menu2 {
+    position: absolute;
+    top: 8em;
+    margin-left: 2em;
+    list-style-type: square;
+}
+
+/*
+** CSS FOR THE NAVIGATION MENU
+*/
+
+#navigate {
+    max-width: 960px;
+    margin-top: 20px;
+    text-align: left;
+    background-color: #101010;
+}
+
+#navigate li {
+    position: relative;
+    border-right: 1px solid #202020;
+}
+
+#navigate li a {
+    color: #808080;
+    padding: 10px 20px;
+}
+
+#navigate li ul {
+    display: none;
+    background-color: #101010;
+    border-top: 1px solid #202020;
+    position: absolute;
+    left: 0;
+}
+
+#navigate li li {
+    float: none;
+    border: none;
+    width: 200px;
+}
+
+#navigate li:hover ul {
+    display: block;
+    z-index: 3;
+}
+
+#navigate li:hover a {
+    color: white;
+    text-decoration: none;
+}
+
+#navigate-left {
+    position: absolute;
+    top: 125px;
+    margin-left: 3em;
+    list-style-type: square;
+}
+
+#navigate-left li {
+    list-style-type: square;
+}
+
+#navigate-left li ul {
+    margin-left: 1em;
+    margin-top: 1px;
+}

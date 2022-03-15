@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Email Encryption Basics</title>
+    <meta name="description" content="AnonHunter Newblood Encryption Information" />
+    <meta name="keywords" content="anonymous PGP, PGP, anonymous irc, openpgp, GPG, GnuPG" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/menu.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/text.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/queries.css" media="screen" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+</head>
+
+
+<body>
+    <div id="menu">
+        <div>
+            <ul>
+                <li><a id="home" href="https://anonhunters.us/"><img src="./images/flags/en.png" alt="home" width="20" height="12" /> English</a></li>
+                <li><a href="https://anonhunters.us/es/securemail.html"><img src="./images/flags/es.png" alt="" width="20" height="12" /> Español</a></li>
+                <li><a href="https://anonhunters.us/nl/securemail.html"><img src="./images/flags/nl.png" alt="" width="20" height="12" /> Nederlands</a></li>
+                <li><a href="https://anonhunters.us/fr/securemail.html"><img src="./images/flags/fr.png" alt="" width="20" height="12" /> Français</a></li>
+                <li><a href="https://anonhunters.us/it/securemail.html"><img src="./images/flags/it.png" alt="" width="20" height="12" /> Italian</a></li>
+                <li><a href="https://anonhunters.us/de/securemail.html"><img src="./images/flags/de.png" alt="" width="20" height="12" /> Deutsch</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="main">
+        <div id="header">
+            <img src="./images/logo.png" alt="anonymous logo" width="300" />
+            <h2>Email Encryption Basics</h2>
+        </div>
+
+        <ul id="navigate-left">
+            <li><a href="#intro" target="_self">Introduction</a></li>
+            <li><a href="#soft" target="_self">Software Solutions</a>
+                <ul class="list">
+                    <li><a href="#gpg" target="_self">GnuPrivacyGuard</a></li>
+                    <li><a href="#enig" target="_self">Enigmail</a></li>
+                    <li><a href="#claws" target="_self">Claws Email</a></li>
+                    <li><a href="#gpg4" target="_self">Gpg4win</a></li>
+                    <li><a href="#gnup" target="_self">GnuPGk</a></li>
+                    <li><a href="#ppgp" target="_self">Portable PGP</a></li>
+                    <li><a href="#gpgt" target="_self">GPG Tools</a></li>
+                </ul>
+            </li>
+            <li><a href="#quick" target="_self">Quick Start</a></li>
+            <li><a href="#more" target="_self">Additional Resources</a></li>
+            <li><a href="#webmail" target="_self">Using GPG with Webmail</a></li>
+        </ul>
+
+        <div class="content-container" id="intro">
+            <h3>Regular Email and Privacy</h3>
+            <p>When you send an email, its contents are open for anybody to read. Email is like sending a postcard: anyone who can access it can read it.</p>
+            <p>To keep data sent via email private, you need to encrypt it. Only the intended recipient will be able to decrypt the message while anybody else sees only gibberish.</p>
+            <div class="content">
+                <p>Public key encryption is a special case of encryption. It operates using a combination of two keys:</p>
+                <ul class="list">
+                    <li>a private key and
+                    </li>
+                    <li>a public key,
+                    </li>
+                </ul>
+                <p>which together form a pair of keys.</p>
+
+                <p>The private key is kept secret on your computer since it is used for decryption. The public key, which is used for encryption, is given to anybody who wants to send encrypted mail to you.</p>
+                <p><strong>For the most secure setup</strong> it's best to move (not copy) your private key to a USB flash drive for safe keeping.</p>
+            </div>
+
+            <div class="content">
+                <h4>Sending Public-Key Encrypted Mail</h4>
+                <p>The sender's encryption program uses your public key in combination with the sender's private key to encrypt the message.</p>
+            </div>
+            <div class="content">
+                <h4>Receiving Public-Key Encrypted Mail</h4>
+                <p>When you receive the encrypted message, you need to decrypt it. Decryption of a message encrypted with a public key can only be done with the matching private key. This is why the two keys form a pair, and it is also why it is so important
+                    to keep the private key safe and to make sure it never gets into the wrong hands (or in any hands other than yours).</p>
+            </div>
+
+            <div class="content">
+                <h4>Why the Integrity of the Public Key is Essential</h4>
+
+                <p>Another crucial point with public key encryption is the distribution of the public key.</p>
+                <p>Public key encryption is only safe and secure if the sender of an encrypted message can be sure that the public key used for encryption belongs to the recipient. A third party could produce a public key with the recipient's name and give
+                    it to the sender, who uses the key to send important information in encrypted form. The encrypted message is intercepted by the third party, and since it was produced using their public key they have no problem decrypting it with their
+                    private key.</p>
+
+                <h4>This is why it is mandatory that a public key is either given to you personally <del>or authorized by a certificate authority.</del> (The CA model is so hopelessly broken it can be considered useless for this purpose.)</h4>
+            </div>
+        </div>
+        <div class="content-container">
+            <h3><a href="https://en.wikipedia.org/wiki/Web_of_trust" target="_blank" rel="noopener noreferrer">Web of Trust</a></h3>
+            <p>The web of trust concept was first put forth by PGP creator Phil Zimmermann in 1992 in the manual for PGP version 2.0:</p>
+
+            <p>"As time goes on, you will accumulate keys from other people that you may want to designate as trusted introducers. Everyone else will each choose their own trusted introducers. And everyone will gradually accumulate and distribute with their
+                key a collection of certifying signatures from other people, with the expectation that anyone receiving it will trust at least one or two of the signatures. This will cause the emergence of a decentralized fault-tolerant web of confidence
+                for all public keys."</p>
+            <p>For more information on Web of Trust issues and how to build such a Web of Trust, see <a href="http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html" target="_blank" rel="noopener noreferrer">http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html</a>
+            </p>
+
+            <div class="content">
+                <h4>Signing the Keys of Trusted Contacts</h4>
+                <p>When you exchange public keys with people you trust, that is, you are completely certain of who you're dealing with, you use your own key to "sign" the key of the other person. This helps to build the Web of Trust, and eliminates issues
+                    with man in the middle or third party interception type scenarios.</p>
+            </div>
+        </div>
+
+        <div class="content-container" id="soft">
+            <h3>Software Solutions<a></a></h3>
+            <p>PGP was the original encryption package. PGP stands for Pretty Good Privacy. PGP is now a private, for-profit company, a division of Symantec and is a subscription based product. The Open Source equivalent in use now is GPG (GnuPrivacyGuard),
+                and software is available for most operating systems. Both are based on the OpenPGP standard and are pretty much cross-compatible.</p>
+
+            <div class="content" id="gpg">
+                <h4><a href="https://www.gnupg.org/" target="_blank" rel="noopener noreferrer">Gnu Privacy Guard Homepage</a></h4>
+                <p>GnuPG is the GNU project's complete and free implementation of the OpenPGP standard as defined by RFC4880 . GnuPG allows to encrypt and sign your data and communication, features a versatile key management system as well as access modules
+                    for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. Version 2 of GnuPG
+                    also provides support for S/MIME.</p>
+            </div>
+            <div class="content" id="enig">
+                <h4><a href="https://www.enigmail.net/home/index.php" target="_blank" rel="noopener noreferrer">The EnigMail Project</a></h4>
+                <p>Enigmail is a security extension to Mozilla Thunderbird and Seamonkey. It enables you to write and receive email messages signed and/or encrypted with the OpenPGP standard. Sending and receiving encrypted and digitally signed email is
+                    simple using Enigmail. When starting it for the first time, you are guided through the basic setup. We also prepared a new users' guide that explains how to use OpenPGP. Enigmail is available for any system running Mozilla products.</p>
+                <h4><a href="https://www.enigmail.net/documentation/quickstart.php" target="_blank" rel="noopener noreferrer">EnigMail Quick Start Guide</a></h4>
+            </div>
+            <div class="content" id="claws">
+                <h4><a href="http://www.claws-mail.org/" target="_blank" rel="noopener noreferrer">Claws Email</a></h4>
+                <p>Claws Mail is a user-friendly, lightweight, and fast email client for Windows and most flavors of *nix. It comes with the GPGME plugin and is ready-to-go solution for Windows/Linux. The appearance and interface are designed to be familiar
+                    to new users coming from other popular email clients, as well as experienced users. Almost all commands are accessible with the keyboard. The messages are managed in the standard MH format, which features fast access and data security.
+                    You'll be able to import your emails from almost any other email client, and export them just as easily. Lots of extra functionality, like an RSS aggregator, calendar, or laptop LED handling, are provided by extra plugins. </p>
+            </div>
+            <div class="content" id="gpg4">
+                <h4><a href="https://gpg4win.org/" target="_blank" rel="noopener noreferrer">Gpg4win</a></h4>
+                <p>Gpg4win runs on Windows XP, Vista and 7. Both 32 and 64bit systems are supported. The Outlook plugin GpgOL is compatible with Microsoft Outlook 2003 and 2007. Outlook 2010 is not supported.</p>
+            </div>
+            <div class="content" id="gnup">
+                <h4><a href="https://sourceforge.net/projects/gnupgk/" target="_blank" rel="noopener noreferrer">GnuPGk - Windows shell gui for gpg</a></h4>
+                <p>A GnuPG Frontend GUI made in C#. It is compatible with PGP as well so it can be a very useful tool for encryption/decryption. It also incorporates a shell extension so it can be easy to right click and encrypt or decrypt.</p>
+            </div>
+            <div class="content" id="ppgp">
+                <h4><a href="http://ppgp.sourceforge.net/" target="_blank" rel="noopener noreferrer">Portable PGP</a></h4>
+                <p>Portable PGP is a fully featured, lightweight, java based, open source PGP tool. It allows to encrypt,decrypt,sign and verify text and files with a nice and absolutely straight graphical interface. It's absolutely simple to use and provides
+                    everything you need to get started with PGP cryptography.<br /> Works with Oracle Java 7, Windows 7 x64 and Ubuntu (x64) OpenJDK. USB stick version available now.</p>
+            </div>
+            <div class="content" id="gpgt">
+                <h4><a href="https://gpgtools.org//" target="_blank" rel="noopener noreferrer">GPG Tools - A Complete Toolkit for Macs, including Apple Mail integration</a></h4>
+                <p>Use GPG Suite to encrypt, decrypt, sign and verify files or messages. Manage your GPG Keychain with a few simple clicks and experience the full power of GPG easier than ever before. For OSX 10.6+.</p>
+
+                <p>By downloading GPG Tools and Enigmail plugin, Mac users are good to go with either Apple Mail or Mozilla mail (Thunderbird, Seamonkey).</p>
+            </div>
+        </div>
+        <div class="content-container" id="quick">
+            <h3>Quick Start</h3>
+            <p>Encrypt an email account you already have: Thunderbird with Enigmail; Mac Mail with GPGTools; Outlook with GPG4Win.</p>
+            <p>For Windows or Linux: use Thunderbird with Enigmail plugin, or use Claws Mail with built in GPGME.</p>
+            <p>For Mac: install GPG Tools, then use Apple Mail, or Thunderbird with Enigmail plugin.</p>
+            <p>For more information on these topics and a walk-through of intalling Thunderbird/Enigmail/GPG please visit <a href="https://www.enigmail.net/documentation/quickstart.php" target="_blank" rel="noopener noreferrer">EnigMail Quick Start Guide</a>.
+
+                <div class="content">
+                    <h4>How to set up your GPG key to be as secure as possible.</h4>
+                    <p>Use what the NSA uses! Here are informations from an article at The Register:
+                        <a href="https://www.theregister.co.uk/2013/08/22/guardian_snowden_advice" target="_blank" rel="noopener noreferrer">http://www.theregister.co.uk/2013/08/22/guardian_snowden_advice</a>.</p>
+                </div>
+        </div>
+
+        <div class="content-container" id="more">
+            <h3>Additional Resources</h3>
+            <div class="content">
+                <h4><a href="https://ipgmail.com/" target="_blank" rel="noopener noreferrer">iPGMail - PGP for iOS</a></h4>
+                <p>iPGMail is an iPhone/iPad app for sending and decrypting PGP encoded messages.</p>
+            </div>
+            <div class="content">
+                <h4><a href="https://itunes.apple.com/us/app/opengp/id414003727?mt=8" target="_blank" rel="noopener noreferrer">oPenGP - </a></h4>
+                <p>oPenGP is a solution to support OpenPGP standard (RFC 4880) on your iOS device. Fully compliant with GPG &amp; PGP® Desktop software.</p>
+            </div>
+            <div class="content">
+                <h4><a href="http://www.thialfihar.org/projects/apg/" target="_blank" rel="noopener noreferrer">Android Privacy Guard (APG) - an Android GPG client</a></h4>
+                <p>From the website: "There's no public key encryption for Android yet, but that's an important feature for many of us. APG tries to fill that void, with new features quickly being added. Hopefully APG will grow into a fully functional OpenGPG
+                    implementation of GPG or PGP calibre." APG works with <a href="https://code.google.com/p/k9mail/" target="_blank" rel="noopener noreferrer">K-9 Mail.</a></p>
+            </div>
+
+            <div class="content">
+                <h4><a href="https://protonmail.com/" target="_blank" rel="noopener noreferrer">ProtonMail</a></h4>
+                <p>ProtonMail is an end-to-end encrypted secure email service for the masses. Proton takes their security very seriously: all email is encrypted from start to finish, from their servers to the recipient's. They have zero access to user data,
+                    use proven, open source cryptography, all servers are Swiss and therefore protected by the Swiss Data Protection Act and outside of the US and EU's jurisdiction. They own all of their servers which are located under 1000 meters of
+                    granite rock in a heavily guarded bunker which can survive a nuclear attack. ProtonMail keeps no logs of IP addresses or personally identifiable information. They also support setting expiration dates on encrypted emails, so they will
+                    be deleted from the recipients mailbox once they have expired. This is the real deal. For more in-depth information on ProtonMail's security and features, visit their website <a href="https://protonmail.com/security-details/" target="_blank"
+                        rel="noopener noreferrer">https://protonmail.com/security-details.</a></p>
+            </div>
+            <div class="content">
+                <h4><a href="https://countermail.com/" target="_blank" rel="noopener noreferrer">Countermail</a></h4>
+                <p>Countermail is a Sweden based webmail provider with integrated GPG support. Mail is encrypted on your own machine before sending, and vice versa. Accepts Bitcoin. Extremely secure, protects against man-in-the-middle (MITM) attacks, USB
+                    key option.</p>
+            </div>
+            <div class="content">
+                <h4><a href="http://shazzlemail.com/" target="_blank" rel="noopener noreferrer">Shazzlemail - privacy-protective and
+surveillance-resistant secure email service.</a></h4>
+                <p>ShazzleMail is a free smartphone (iOS and Android) application that allows you to send private email to anyone in your contacts list. You can also use ShazzleMail on your laptop or desktop with an email client that supports POP/SMTP interface,
+                    including Microsoft Outlook. ShazzleMail sends all communications over a secure line, and keeps your email on your local storage device and not in some third party cloud. Based in Braintree, MA.</p>
+            </div>
+            <div class="content">
+                <h4><a href="https://crypto.cat/" target="_blank" rel="noopener noreferrer">Cryptocat</a></h4>
+                <p>Secure web chatting. You must update Cryptocat to at least 2.1.12 to be safe from known problems. See <a href="http://tobtu.com/decryptocat.php" target="_blank" rel="noopener noreferrer">this analysis of past issues.</a></p>
+            </div>
+            <div class="content">
+                <h4><a href="http://safetyjabber.com/" target="_blank" rel="noopener noreferrer">SafetyJabber</a></h4>
+                <p>Jabber client with integrated PGP encryption for Windows, Mac, and iOS. A free version is available to download.</p>
+            </div>
+        </div>
+
+        <div class="content-container" id="webmail">
+            <h3>Using GPG/PGP with Gmail and other webmail providers</h3>
+            <p><a href="https://www.mailvelope.com/" target="_blank" rel="noopener noreferrer">Mailvelope</a> is a plugin supporting webmail encryption in Firefox and Chrome. Mailvelope is completely open source and based on <a href="https://openpgpjs.org"
+                    target="_blank" rel="noopener noreferrer">OpenPGP.js</a>, an OpenPGP library for JavaScript. It currently comes preconfigured for webmail providers Gmail, GMX, Outlook, Posteo, WEB.DE, Yahoo, and can be adjusted to work with other webmail
+                providers.</p>
+            <p>Any plugin based webmail solution where you type your message and then click a button to encrypt before sending is useless from a security standpoint because the provider can see your message as you type it before it is encrypted, thus is
+                completely insecure. Mailvelope solves this by opening an external editor where you compose your message before encrypting and then inserting the encrypted message into the webmail compose window. It also features key generation and management
+                functions.</p>
+            <p>Mailvelope is currently in Beta status and does not support encrypted attachments. It is <strong>mandatory</strong> that you read and understand the instructions for proper use of the plugin if you wish to actually be secure.</p>
+        </div>
+        <p><em>Foreign intelligence organizations use the Internet for covert and clandestine communication without detection and you can as well. Do not believe that the NSA or DOJ is all powerful. They are not and they can be defeated.</em></p>
+
+        <div id="footer">
+            <!--Footer Begins -->
+            <h3><a href="./index.html">Back to the AnonHunter main page</a></h3>
+            <a href="https://validator.w3.org/check?uri=https://anonhunters.us/securemail.html" target="_blank" rel="noopener noreferrer"> <img src="./images/html5-valid.gif" alt="Valid XHTML 1.0 Transitional" height="24" width="103" /></a>
+
+        </div>
+        <!--Footer Ends -->
+
+    </div>
+    <!--Main Container Ends -->
+</body>
+
+</html>
